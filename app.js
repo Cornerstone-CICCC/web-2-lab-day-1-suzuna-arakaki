@@ -1,5 +1,6 @@
 const inputSearch = document.getElementById('input-search')
 const btnSearch = document.getElementById('btn-search')
+const sectionTemp = document.getElementById('section-temp')
 const nameOfCity = document.getElementById('name-of-city')
 const temp = document.getElementById('temp')
 const countryTd = document.getElementById('country-td')
@@ -47,6 +48,16 @@ btnSearch.addEventListener("click", function(e) {
       populationTd.textContent = `${cityLocationData.results[0].population}`, // It was undefined because the results is array. we need to put [0]
       tmrForecastTdLow.textContent = `Low: ${cityWeatherData.daily.temperature_2m_min} ${cityWeatherData.daily_units.temperature_2m_min}`,
       tmrForecastTdMax.textContent = `Max: ${cityWeatherData.daily.temperature_2m_max} ${cityWeatherData.daily_units.temperature_2m_max}`
+
+      if(cityWeatherData.current.is_day !== 0) {
+        document.body.style.backgroundColor = 'rgb(62, 62, 62)'
+        document.body.style.color = 'white'
+        // sectionTemp.style.backgroundImage = 'url("images/night.jpg")'
+      } else {
+        document.body.style.backgroundColor = 'white'
+        document.body.style.color = 'black'
+        // sectionTemp.style.backgroundImage = 'url("images/day.jpg")'
+      }
     } catch(err) {
       console.error(err)
     }
