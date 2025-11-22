@@ -8,6 +8,37 @@
 </head>
 <body>
   <!-- YOUR CODE HERE -->
+   <section class="section-search-bar">
+    <input type="text" id="input-search" name="input-search" placeholder="Enter City Name ...">
+    <button id="btn-search">Search</button>
+   </section>
+
+   <section class="section-temp">
+    <h1 id="name-of-city"></h1>
+    <div id="temp"></div>
+   </section>
+
+   <table class="weather-table">
+    <tbody>
+      <tr id="country-tr">
+        <td rowspan="1">Country</td>
+        <td id="country-td"></td>
+      </tr>
+      <tr>
+        <td rowspan="1">Timezone</td>
+        <td id="timezone-td"></td>
+      </tr>
+      <tr>
+        <td rowspan="1">Population</td>
+        <td id="population-td"></td>
+      </tr>
+      <tr>
+        <td rowspan="1">Tomorrow's Forecast</td>
+        <td id="tmr-forecast-td-low"></td>
+        <td id="tmr-forecast-td-max"></td>
+      </tr>
+    </tbody>
+   </table>
   
   <script src="./app.js"></script>
 </body>
